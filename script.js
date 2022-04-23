@@ -1,5 +1,11 @@
-// password values:
+// input variables:
+var enter;
+var confirmNumber;
+var confirmCharacter;
+var confirmUppercase;
+var confirmLowercase;
 
+// password values:
 // special characters:
 character = [
   "!",
@@ -66,16 +72,22 @@ alpha = [
   "z",
 ];
 
+// Space is for the Uppercase conversion
+space = [];
+
+// Choices declared outside the if statement so they can be concatenated upon condition
+var choices;
+
+// converts letters to uppercase
+var toUpper = function (x) {
+  return x.toUpperCase();
+};
+
+// creates a variable for uppercase conversion
+alpha2 = alpha.map(toUpper);
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
