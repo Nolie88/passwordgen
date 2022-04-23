@@ -1,3 +1,71 @@
+// password values:
+
+// special characters:
+character = [
+  "!",
+  "#",
+  "$",
+  "%",
+  "&",
+  "'",
+  "(",
+  ")",
+  "*",
+  "+",
+  ",",
+  "-",
+  ".",
+  "/",
+  ":",
+  ";",
+  " < ",
+  "=",
+  " > ",
+  " ? ",
+  "@",
+  "[",
+  "\\",
+  "]",
+  " ^ ",
+  "_",
+  "`",
+  "{",
+  "|",
+  "}",
+  "~",
+];
+// Numbers:
+number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// Alphabetic characters:
+alpha = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -7,7 +75,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
