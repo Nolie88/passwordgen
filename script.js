@@ -1,10 +1,18 @@
 // input variables:
 var enter;
-var confirmNumber;
-var confirmCharacter;
-var confirmUppercase;
-var confirmLowercase;
 
+function userInput() {
+  var confirmNumber = confirm("Do you want to include a number?");
+  var confirmCharacter = confirm("How many characters would you like?");
+  var confirmUppercase = confirm("Do you want to include Upper case letters?");
+  var confirmLowercase = confirm("Do you want to include Lower case letters?");
+  return {
+    confirmNumber,
+    confirmLowercase,
+    confirmUppercase,
+    confirmCharacter,
+  };
+}
 // password values:
 // special characters:
 character = [
@@ -71,9 +79,36 @@ alpha = [
   "y",
   "z",
 ];
+upper = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 
-// Space is for the Uppercase conversion
-space = [];
+var space = [];
 
 // Choices declared outside the if statement so they can be concatenated upon condition
 var choices;
@@ -84,10 +119,22 @@ var toUpper = function (x) {
 };
 
 // creates a variable for uppercase conversion
-alpha2 = alpha.map(toUpper);
+// alpha2 = alpha.map(toUpper);
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function writePassword() {
+  var userChoice = userInput();
+  getPassword(userChoice);
+}
+function getPassword(userChoice) {
+  if (userChoice.confirmNumber === true) {
+    var choices = number[Math.floor(Math.random() * number.Length)];
+    space = space.concat(choices);
+    console.log(space);
+  }
+}
