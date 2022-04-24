@@ -49,9 +49,9 @@ character = [
   "~",
 ];
 // Numbers:
-number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // Alphabetic characters:
-alpha = [
+lower = [
   "a",
   "b",
   "c",
@@ -111,7 +111,7 @@ upper = [
 var space = [];
 
 // Choices declared outside the if statement so they can be concatenated upon condition
-var choices;
+var choices = "";
 
 // converts letters to uppercase
 var toUpper = function (x) {
@@ -131,10 +131,24 @@ function writePassword() {
   var userChoice = userInput();
   getPassword(userChoice);
 }
+
 function getPassword(userChoice) {
+  var options = "";
   if (userChoice.confirmNumber === true) {
-    var choices = number[Math.floor(Math.random() * number.Length)];
-    space = space.concat(choices);
-    console.log(space);
+    options += number[Math.floor(Math.random() * number.length)];
+    console.log(options);
+  }
+  if (userChoice.confirmLowercase === true) {
+    options += lower[Math.floor(Math.random() * number.length)];
+    console.log(options);
+  }
+
+  if (userChoice.confirmUppercase === true) {
+    options += upper[Math.floor(Math.random() * number.length)];
+    console.log(options);
+  }
+  if (userChoice.confirmCharacter === true) {
+    options += character[Math.floor(Math.random() * number.length)];
+    console.log(options);
   }
 }
