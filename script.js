@@ -136,19 +136,25 @@ function getPassword(userChoice) {
   var options = "";
   if (userChoice.confirmNumber === true) {
     options += number[Math.floor(Math.random() * number.length)];
+    space = space.concat(number);
     console.log(options);
   }
   if (userChoice.confirmLowercase === true) {
     options += lower[Math.floor(Math.random() * number.length)];
+    space = space.concat(lower);
     console.log(options);
   }
 
   if (userChoice.confirmUppercase === true) {
     options += upper[Math.floor(Math.random() * number.length)];
+    space = space.concat(upper);
     console.log(options);
   }
   if (userChoice.confirmCharacter === true) {
     options += character[Math.floor(Math.random() * number.length)];
+    space = space.concat(character);
     console.log(options);
   }
+  console.log(space);
+  return options;
 }
